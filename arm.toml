@@ -1,0 +1,15 @@
+[repo]
+primary_branch = "main"
+
+[worktree]
+dir = ".worktrees/{name}"
+branch = "{name}"
+setup = "npm ci"
+
+[dev]
+command = "npm run dev -- --hostname 0.0.0.0 --port {port}"
+port = "auto"
+ready = "http://127.0.0.1:{port}/"
+
+[test]
+command = "npm run check"
